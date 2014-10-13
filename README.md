@@ -1,9 +1,12 @@
 # Searchly Sample Rails Application
 
+This example illustrates basic search features of Searchly with Rails. 
+[Elasticsearch rails client](https://github.com/elasticsearch/elasticsearch-rails) is used for integration.
+Each crud operation is reflected to Searchly via model callbacks.
 
 # Connection Settings
 
-Please see development.rb and production.rb for Elasticsearch connection url settings.
+Please see `development.rb` and `production.rb` for Elasticsearch connection url settings.
 
 ```ruby
 
@@ -13,7 +16,6 @@ elasticsearch_url = ENV['SEARCHBOX_URL'] || ENV['SEARCHLY_URL'] ||
   Elasticsearch::Model.client = Elasticsearch::Client.new host: elasticsearch_url
 
 ```
-
 
 # Setting up with rake
 
