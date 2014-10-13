@@ -11,7 +11,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
@@ -81,6 +81,10 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Elasticsearch connection configuration
-  Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
+
+  elasticsearch_url = ENV['SEARCHBOX_URL'] || ENV['SEARCHLY_URL'] ||
+      JSON.parse(ENV['VCAP_SERVICES']['searchly'][0]['credentials']['uri']) || 'http://site:xyz-searchly.com'
+
+  Elasticsearch::Model.client = Elasticsearch::Client.new host: elasticsearch_url
 
 end

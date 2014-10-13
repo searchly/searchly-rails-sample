@@ -6,6 +6,9 @@ gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.3'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -37,12 +40,11 @@ gem 'spring', group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Use Less for css
-gem 'less-rails'
+# Used for static assets dependency management
+gem 'bower-rails'
 
-gem 'therubyracer'
-
-gem 'less-rails-bootstrap'
+# For angular + asset pipeline integration
+gem 'angular-rails-templates'
 
 gem 'elasticsearch-model'
 

@@ -1,0 +1,31 @@
+<header class="row">
+    <h1 class="text-center col-md-6 col-md-offset-3">Find Restaurants</h1>
+</header>
+<section class="row">
+    <form>
+        <div class="form-group col-md-6 col-md-offset-3">
+            <label for="query" class="sr-only">Keywords</label>
+            <input id="query" type="text" autofocus class="form-control" placeholder="Restaurant name, genre (pub)"
+                   ng-model="query">
+        </div>
+        <div class="form-group col-md-6 col-md-offset-3 text-center">
+            <button class="btn btn-primary btn-lg" ng-click="search()">Search</button>
+        </div>
+    </form>
+</section>
+
+<div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-9">
+        <article class="search-result row" ng-repeat="restaurant in restaurants">
+            <div class="col-md-12">
+                <h3>{{restaurant.name}}</h3>
+
+                <p>{{restaurant.address}}</p>
+
+                <p>{{restaurant.cuisine}}</p>
+            </div>
+        </article>
+    </div>
+</div>
