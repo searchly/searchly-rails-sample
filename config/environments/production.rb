@@ -82,8 +82,9 @@ Rails.application.configure do
 
   # Elasticsearch connection configuration
 
+  # Elasticsearch connection configuration
   elasticsearch_url = ENV['SEARCHBOX_URL'] || ENV['SEARCHLY_URL'] ||
-      JSON.parse(ENV['VCAP_SERVICES']['searchly'][0]['credentials']['uri']) || 'http://site:xyz-searchly.com'
+      (ENV['VCAP_SERVICES'] && JSON.parse(ENV['VCAP_SERVICES']['searchly'][0]['credentials']['uri'])) || 'http://site:@xyz-searchly.com'
 
   Elasticsearch::Model.client = Elasticsearch::Client.new host: elasticsearch_url
 
