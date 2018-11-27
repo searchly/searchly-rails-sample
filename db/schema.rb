@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150510181229) do
 
-  create_table "restaurants", force: true do |t|
+  create_table "restaurants", force: :cascade do |t|
     t.string   "name"
     t.integer  "rating"
     t.string   "address"

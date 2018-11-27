@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.10'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -45,9 +45,13 @@ gem 'bower-rails'
 # For angular + asset pipeline integration
 gem 'angular-rails-templates'
 
-gem 'elasticsearch-model'
+gem 'elasticsearch-model', '0.1.9'
 
-gem 'elasticsearch-rails'
+gem 'elasticsearch-rails', '0.1.9'
+
+gem 'elasticsearch', '1.1.3'
+
+#gem 'elasticsearch', '~> 0.1.9'
 
 # For attachements like pdf
 gem 'carrierwave'
@@ -57,6 +61,3 @@ group :production do
   gem 'thin'
   gem 'pg'
 end
-
-
-

@@ -20,7 +20,7 @@ class Restaurant < ActiveRecord::Base
   def as_indexed_json(options={})
     as_json(except: [:lon, :lat, :menu]).merge(
         location: {lat: self.lat, lon: self.lon},
-        menu: Base64.encode64(File.open(self.menu.current_path) { |io| io.read }))
+        menu: Base64.encode64(File.open(Rails.root.join('menu.pdf')) { |io| io.read }))
   end
 
 end

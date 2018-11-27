@@ -1,4 +1,4 @@
-menu = File.open(Rails.root.join('menu.pdf'), 'rb')
+menu = nil # hardcoded pdf at model
 
 Restaurant.create({:address => "129 Erie St", :lat => 41.875083, :lon => -80.132493, :name => "Empty Keg", :rating => 5, :cuisine => "Pub Food", :menu => menu})
 Restaurant.create({:address => "102 Fox Island Rd", :lat => 40.991522, :lon => -73.658456, :name => "Fish", :rating => 3.5, :cuisine => "Seafood", :menu => menu})
